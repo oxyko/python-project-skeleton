@@ -1,0 +1,46 @@
+######################################################
+###           Configuration file for               ###
+###              My application                    ###
+######################################################
+
+
+root_folder: "/root/folder/for/smth/"
+
+some_attribute:
+    A: "A"
+    B:  "B"
+
+
+######################################################
+###                 Logging                        ###
+######################################################
+## Keep below structure - this format is expected by python's logging module
+
+logging:
+
+    version: 1
+    disable_existing_loggers: true
+
+    formatters:
+        briefFormatter:
+            format: '%(levelname)s: %(message)s'
+        preciseFormatter:
+            format: '%(asctime)s - %(module)s - %(levelname)s: %(message)s'
+            datefmt: '%Y/%m/%d %H:%M:%S'
+
+    handlers:
+        console:
+            class: logging.StreamHandler
+            formatter: briefFormatter
+            level: ERROR
+            stream: ext://sys.stdout
+        file:
+            class : logging.FileHandler
+            formatter: preciseFormatter
+            level: DEBUG
+            ## Note that file does not have to exist, but the directories (in case of full path name) should
+            filename: reference_data_manager.log
+
+    root:
+        level: DEBUG
+        handlers: [console, file]
