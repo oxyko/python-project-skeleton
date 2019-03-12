@@ -35,7 +35,7 @@ setup(
       },
 
     install_requires=[
-        'PyYAML==3.12',
+        'PyYAML==4.2b1',
       ],
 
 
