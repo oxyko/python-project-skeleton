@@ -1,5 +1,6 @@
 from setuptools import setup, find_packages
 
+# https://www.digitalocean.com/community/tutorials/how-to-package-and-distribute-python-applications
 
 setup(
     name="python-project-skeleton",
